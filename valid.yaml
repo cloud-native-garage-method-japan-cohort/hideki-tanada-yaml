@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  labels:
+    tekton.dev/task: github-add-comment
+  generateName: github-add-comment-to-issue-9-
+spec:
+  taskRef:
+    kind: Task
+    name: github-add-comment
+  params:
+    - name: REQUEST_URL
+      value: https://github.com/upslopeio/ibm-cloud-garage-training/issues/9
+    - name: COMMENT_OR_FILE
+      value: |
+        ポエムしたかったけど浮かばなかった。
